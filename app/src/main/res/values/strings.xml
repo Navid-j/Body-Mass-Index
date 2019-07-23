@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BMI Weight Calculator</string>
+    <string name="height">قد</string>
+    <string name="weight">وزن</string>
+    <string name="calculate">محاسبه</string>
+    <string name="height_input">قد (سانتی متر)</string>
+    <string name="weight_input">وزن (کیلو گرم)</string>
+    <string name="result">نتیجه</string>
+    <string name="weight_and_height">وزن: %s - قد: %s</string>
+    <string name="tv_Bmi_Status">شاخص توده بدنی شما</string>
+    <string name="test">
+        شاخص توده بدنی شما
+        شاخص توده بدنی شما
+        شاخص توده بدنی شماشاخص توده بدنی شماشاخص توده بدنی شماشاخص توده بدنی شماشاخص توده بدنی شما
+        شاخص توده بدنی شماشاخص توده بدنی شماشاخص توده بدنی شما
+
+    </string>
+</resources>
