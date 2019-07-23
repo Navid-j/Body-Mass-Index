@@ -3,9 +3,11 @@ package com.example.bmiweightcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,18 +43,29 @@ public class MainActivity extends AppCompatActivity {
         aboutLayout = findViewById(R.id.about);
         resultLayout = findViewById(R.id.layout_Result);
 
+        final InputMethodManager keybord = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resultLayout.setVisibility(View.VISIBLE);
-                aboutLayout.setVisibility(View.GONE);
 
-                int height = Integer.parseInt(edtHeight.getText().toString());
-                int weight = Integer.parseInt(edtWeight.getText().toString());
-                if (height<1 && weight<1) {
+
+                //Empty Check
+                if (edtHeight.getText().toString().isEmpty() ||
+                        edtWeight.getText().toString().isEmpty() ||
+                        edtHeight.getText().toString().matches("0") ||
+                        edtWeight.getText().toString().matches("0")) {
                     Toast.makeText(MainActivity.this, R.string.warn, Toast.LENGTH_LONG).show();
+
                 }else {
 
+                    keybord.hideSoftInputFromWindow(edtWeight.getWindowToken(),0);
+
+                    int height = Integer.parseInt(edtHeight.getText().toString());
+                    int weight = Integer.parseInt(edtWeight.getText().toString());
+
+                    resultLayout.setVisibility(View.VISIBLE);
+                    aboutLayout.setVisibility(View.GONE);
                     float result = BmiCalculator(weight,height);
 
                     tvBMI.setText(Float.toString(result));
