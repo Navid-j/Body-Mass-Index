@@ -10,11 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_Calc"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.425"
+        android:background="@color/colorBG"
         >
 
         <EditText
@@ -43,7 +44,7 @@
             android:id="@+id/edt_Weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="100dp"
             android:ems="10"
             android:hint="@string/weight_input"
@@ -80,11 +81,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_Result"
         android:layout_width="match_parent"
-        android:layout_height="383dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_Calc"
-        >
+        app:layout_constraintVertical_bias="0.581"
+        tools:layout_editor_absoluteX="0dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_Result"
@@ -109,87 +112,102 @@
 
         <ImageView
             android:id="@+id/img_Body_icons"
-            android:layout_width="137dp"
-            android:layout_height="289dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="@id/layout_Result"
-            app:layout_constraintEnd_toEndOf="@id/layout_Result"
-            app:layout_constraintTop_toBottomOf="@id/divider"
-            app:layout_constraintVertical_bias="0.619"
-            app:srcCompat="@drawable/ic_normal_weight" />
-
-        <TextView
-            android:id="@+id/tv_Body_Info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="99dp"
+            android:layout_height="222dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="36dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/weight_and_height"
-            app:layout_constraintEnd_toStartOf="@+id/img_Body_icons"
-            app:layout_constraintHorizontal_bias="0.467"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/layout_Result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintVertical_bias="1.0"
+            android:background="@drawable/ic_normal_weight" />
 
 
         <TextView
             android:id="@+id/tv_BMI_subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="84dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="8dp"
             android:text="@string/tv_Bmi_Status"
             android:textColor="@color/colorGreen"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/img_Body_icons"
-            app:layout_constraintHorizontal_bias="0.853"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Body_Info" />
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <TextView
             android:id="@+id/tv_BMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
             android:text="BMI"
             android:textColor="@color/colorGreen"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_BMI_subject"
-            app:layout_constraintEnd_toStartOf="@+id/tv_BMI_subject"
-            app:layout_constraintHorizontal_bias="0.807"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_BMI_subject"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_BMI_subject"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/tv_BMI_subject"
+            app:layout_constraintTop_toBottomOf="@+id/tv_BMI_subject" />
 
         <TextView
             android:id="@+id/tv_Recommendation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
             android:ems="12"
-            android:text="@string/test"
-            app:layout_constraintBottom_toBottomOf="@id/tv_Body_Status"
+            android:gravity="center"
+            android:text="@string/normal_Weight_Recommendation"
             app:layout_constraintEnd_toStartOf="@+id/img_Body_icons"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_BMI" />
 
         <TextView
             android:id="@+id/tv_Body_Status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/colorGreen"
             android:ems="10"
-            android:text=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/img_Body_icons"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:gravity="center"
+            android:text="@string/normal_Weight"
+            app:layout_constraintEnd_toEndOf="@+id/tv_Recommendation"
+            app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintStart_toStartOf="@+id/tv_Recommendation"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Recommendation" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_Calc"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/aboutBmi"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
