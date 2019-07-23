@@ -7,7 +7,9 @@
     <string name="weight_input">وزن (کیلو گرم)</string>
     <string name="result">نتیجه</string>
     <string name="tv_Bmi_Status">شاخص توده بدنی شما</string>
-    <string name="warn">لطفا مقدار صحیح را وارید کنید.</string>
+
+    <!-- Toast Warning -->
+    <string name="warn">لطفا مقدار صحیح را وارد کنید.</string>
 
     <!-- Recommendation -->
     <string name="under_Weight_Recommendation">وزن تان را افزایش دهید.</string>
